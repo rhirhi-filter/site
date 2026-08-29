@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="theme-color" id="themeColorMeta" content="#2C3553">
+<script>try{if(localStorage.getItem("filterTheme")==="light"){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}var m=document.getElementById("themeColorMeta");if(m)m.setAttribute("content",(localStorage.getItem("filterTheme")==="light")?"#FAFBFC":"#2C3553");}catch(e){}</script>
+<meta name="color-scheme" content="dark">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,follow">
+<title>Your Cart — FILTER Ladies Salon Abu Dhabi</title>
+<meta name="description" content="Your FILTER enquiry cart — review your selected treatments and send them to us on WhatsApp in one tap.">
+<link rel="canonical" href="https://filtersalon.com/cart.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Manrope:wght@300;400;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background-color:#2C3553;
+ background-image:radial-gradient(ellipse at 50% -10%,#39456E 0%,#2C3553 55%,#232B47 100%);
+ font-family:"Manrope",sans-serif;font-weight:300;color:#EAEFF9}
+html[dir="rtl"] body{font-family:"Tajawal",sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px clamp(16px,4vw,32px);
+ border-block-end:1px solid rgba(240,210,131,.22)}
+.wm{font-family:"Fraunces",serif;font-weight:500;letter-spacing:.34em;color:#F0D283;text-decoration:none;font-size:1.05rem}
+.lp{display:flex;gap:6px}
+.lp button{background-color:rgba(35,43,71,.8);border:1px solid rgba(240,210,131,.4);color:#DEE5F3;border-radius:999px;
+ padding:7px 13px;font-family:inherit;font-weight:600;font-size:.78rem;cursor:pointer}
+.lp button[aria-pressed="true"]{background-image:linear-gradient(160deg,#F0D283,#CCAA4C);color:#241C10;border-color:#8A6E28}
+main{max-width:640px;margin-inline:auto;padding:34px clamp(16px,5vw,28px) 60px}
+h1{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(2rem,7vw,2.8rem);margin:0 0 6px;color:#FBF8F0}
+html[dir="rtl"] h1{font-family:"Tajawal",sans-serif;font-weight:700}
+.sub{color:#B4BFD7;margin:0 0 26px}
+/* ═══════════ CART SYSTEM ═══════════ */
+.price-row{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .2s}
+.price-row::after{content:"＋";color:#F0D283;opacity:.38;font-weight:400;margin-inline-start:4px;transition:opacity .2s,transform .2s}
+@media (hover:hover){.price-row:hover{background-color:rgba(240,210,131,.06)}
+.price-row:hover::after{opacity:1;transform:scale(1.15)}}
+.price-row:focus-visible{outline:2px solid #F0D283;outline-offset:2px;border-radius:6px}
+#cartFab_unused{position:fixed;inset-block-end:18px;inset-inline-end:18px;z-index:140;width:58px;height:58px;border-radius:50%;
+  display:none;place-items:center;cursor:pointer;border:1px solid #8A6E28;
+  background-image:linear-gradient(160deg,#F0D283,#CCAA4C 58%,#E5C979 130%);color:#241C10;
+  box-shadow:0 10px 26px -8px rgba(0,0,0,.55);-webkit-tap-highlight-color:transparent}
+#cartFab_unused.show{display:grid;animation:fabIn .35s cubic-bezier(.2,.8,.3,1.2)}
+@keyframes fabIn{from{transform:scale(.4);opacity:0}}
+#cartFab_unused svg{width:24px;height:24px}
+#cartFab_unused .cnt{position:absolute;inset-block-start:-4px;inset-inline-end:-4px;min-width:22px;height:22px;border-radius:999px;
+  background-color:#2C3553;color:#F0D283;border:1px solid #F0D283;display:grid;place-items:center;
+  font-family:"Manrope",sans-serif;font-weight:700;font-size:.72rem;padding-inline:5px}
+.cmask_unused{position:fixed;inset:0;z-index:230;display:none;background-color:rgba(14,18,36,.62);
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);align-items:center;justify-content:center;padding:20px}
+.cmask_unused.open{display:flex}
+.ccard{background-color:#232B47;background-image:radial-gradient(ellipse at 50% 0%,#2B3559 0%,#232B47 70%);
+  border:1px solid rgba(240,210,131,.4);border-radius:18px;width:min(430px,100%);max-height:min(78svh,640px);
+  display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+@media (max-width:560px){#cartM .ccard{align-self:flex-end;width:100%;max-width:100%;border-radius:20px 20px 0 0;margin-block-end:-20px;padding-block-end:14px}
+#cartM.cmask_unused{padding:0 0 0}}
+.chead{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 12px;border-block-end:1px solid rgba(240,210,131,.2)}
+.chead b{font-family:"Fraunces",serif;font-weight:500;font-size:1.2rem;color:#FBF8F0}
+html[dir="rtl"] .chead b{font-family:"Tajawal",sans-serif;font-weight:700}
+.cx{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;cursor:pointer;
+  background-color:rgba(44,53,83,.8);border:1px solid rgba(240,210,131,.4);color:#F6F1E5}
+.cx svg{width:15px;height:15px}
+.cbody{padding:8px 18px;overflow-y:auto;flex:1}
+.citem{display:flex;align-items:center;gap:10px;padding-block:10px;border-block-end:1px solid rgba(240,210,131,.12)}
+.citem .cn{flex:1;color:#F6F1E5;font-size:.94rem;font-weight:300}
+.citem .cp{color:#F0D283;font-weight:600;font-size:.9rem;white-space:nowrap;direction:ltr;unicode-bidi:isolate}
+.citem .crm{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;cursor:pointer;flex:none;
+  background-color:transparent;border:1px solid rgba(240,210,131,.3);color:#B4BFD7}
+.citem .crm svg{width:12px;height:12px}
+.cempty{color:#B4BFD7;text-align:center;padding:26px 8px;font-size:.94rem;line-height:1.7}
+.ctotal{display:flex;justify-content:space-between;align-items:baseline;padding:12px 18px;border-block-start:1px solid rgba(240,210,131,.25)}
+.ctotal span{color:#DEE5F3;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.74rem;font-family:"Manrope",sans-serif}
+.ctotal b{color:#F0D283;font-family:"Fraunces",serif;font-weight:500;font-size:1.35rem;direction:ltr;unicode-bidi:isolate}
+.cacts{display:grid;gap:9px;padding:4px 18px 16px}
+.cbtn{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 16px;border-radius:999px;cursor:pointer;
+  text-decoration:none;font-family:"Manrope",sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid transparent}
+html[dir="rtl"] .cbtn{font-family:"Tajawal",sans-serif;letter-spacing:.02em;font-size:.95rem}
+.cbtn.gold{background-image:linear-gradient(160deg,#F0D283,#CCAA4C 58%,#E5C979 130%);color:#241C10;border-color:#8A6E28}
+.cbtn.line{background-color:transparent;border-color:rgba(240,210,131,.45);color:#F0D283}
+.cbtn svg{width:16px;height:16px;flex:none}
+.cfoot{display:flex;justify-content:space-between;gap:12px;padding:0 18px 14px}
+.cfoot button,.cfoot a{background:none;border:none;cursor:pointer;color:#8E9AB5;font-family:"Manrope",sans-serif;font-size:.78rem;text-decoration:underline;text-underline-offset:3px;padding:4px}
+.cdisc{color:#8E9AB5;font-size:.7rem;line-height:1.65;padding:0 18px 16px;margin:0}
+#svcPop .ccard{width:min(360px,100%)}
+#svcPop .sp-n{font-family:"Fraunces",serif;font-weight:500;font-size:1.18rem;color:#FBF8F0;padding:18px 18px 2px}
+html[dir="rtl"] #svcPop .sp-n{font-family:"Tajawal",sans-serif;font-weight:700}
+#svcPop .sp-p{color:#F0D283;font-weight:600;padding:0 18px 14px;direction:ltr;unicode-bidi:isolate;text-align:start}
+#cartToast{position:fixed;inset-block-end:96px;inset-inline:16px;transform:translateY(16px);z-index:240;text-align:center;max-width:820px;margin-inline:auto;
+  background-color:#232B47;border:1px solid #F0D283;color:#F0D283;border-radius:999px;padding:10px 20px;
+  font-family:"Manrope",sans-serif;font-weight:600;font-size:.85rem;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+#cartToast.on{opacity:1;transform:translateY(0)}
+.cwrap{background-color:#232B47;border:1px solid rgba(240,210,131,.4);border-radius:18px;overflow:hidden}
+.note{color:#8E9AB5;font-size:.78rem;line-height:1.7;margin:16px 2px 0}
+.links{display:flex;justify-content:space-between;gap:14px;margin-block-start:26px}
+.links a{color:#F0D283;text-decoration:none;font-weight:600;font-size:.9rem}
+
+.cbtn.bronze{background-image:linear-gradient(160deg,#8F6636 0%,#4A3315 58%,#6B4B22 130%);
+  color:#FFF6E8;border-color:#33220C;box-shadow:inset 0 1.5px 0 rgba(255,240,214,.28)}
+@media (hover:hover){.cbtn.bronze:hover{filter:brightness(1.12)}}
+
+/* inlaid metal-rim buttons */
+.cbtn.bronze{
+  border:2.5px solid transparent;
+  background-image:
+    radial-gradient(130% 110% at 50% -35%, rgba(255,236,205,.30) 0%, rgba(255,236,205,.05) 42%, rgba(0,0,0,0) 62%),
+    linear-gradient(180deg,#5A4326 0%,#3F2D14 48%,#30200D 100%),
+    linear-gradient(160deg,#F2D9A7 0%,#B98A52 28%,#8A5F33 52%,#E8C288 78%,#9C6F3E 100%);
+  background-origin:padding-box,padding-box,border-box;
+  background-clip:padding-box,padding-box,border-box;
+  box-shadow:inset 0 0 0 1.5px rgba(12,8,3,.85), 0 8px 22px -10px rgba(0,0,0,.5);
+  color:#FFF6E8;border-color:transparent}
+.cbtn.gold{
+  border:2.5px solid transparent;
+  background-image:
+    radial-gradient(130% 110% at 50% -35%, rgba(255,250,235,.5) 0%, rgba(255,250,235,.08) 45%, rgba(0,0,0,0) 65%),
+    linear-gradient(180deg,#F0D283 0%,#D4AF54 55%,#C29B3F 100%),
+    linear-gradient(160deg,#F7E4B6 0%,#A87A42 30%,#7A5527 55%,#EFD09A 80%,#8F6636 100%);
+  background-origin:padding-box,padding-box,border-box;
+  background-clip:padding-box,padding-box,border-box;
+  box-shadow:inset 0 0 0 1.5px rgba(58,43,16,.65), 0 8px 22px -10px rgba(0,0,0,.45);
+  color:#241C10;border-color:transparent}
+.btn.btn-gold{
+  border:2.5px solid transparent;
+  background-image:
+    radial-gradient(130% 110% at 50% -35%, rgba(255,250,235,.5) 0%, rgba(255,250,235,.08) 45%, rgba(0,0,0,0) 65%),
+    linear-gradient(180deg,#F0D283 0%,#D4AF54 55%,#C29B3F 100%),
+    linear-gradient(160deg,#F7E4B6 0%,#A87A42 30%,#7A5527 55%,#EFD09A 80%,#8F6636 100%);
+  background-origin:padding-box,padding-box,border-box;
+  background-clip:padding-box,padding-box,border-box;
+  box-shadow:inset 0 0 0 1.5px rgba(58,43,16,.65), 0 8px 22px -10px rgba(0,0,0,.45)}
+
+.cbtn.bronze,.cbtn.gold,.btn.btn-gold{padding-inline:27px}
+@media (max-width:400px){.cbtn{font-size:.78rem;letter-spacing:.08em}}
+.cbtn{white-space:nowrap}
+
+/* unified bronze-rim primaries */
+.btn.btn-gold,.cbtn.gold,.btn.btn-ghost,.hero-cta .btn-outline,.hero-cta-2 .btn-outline,.gr-ctas .btn-outline,.ractions .btn-outline{
+  border:2.5px solid transparent;
+  background-image:
+    radial-gradient(130% 110% at 50% -35%, rgba(255,236,205,.30) 0%, rgba(255,236,205,.05) 42%, rgba(0,0,0,0) 62%),
+    linear-gradient(180deg,#5A4326 0%,#3F2D14 48%,#30200D 100%),
+    linear-gradient(160deg,#F2D9A7 0%,#B98A52 28%,#8A5F33 52%,#E8C288 78%,#9C6F3E 100%);
+  background-origin:padding-box,padding-box,border-box;
+  background-clip:padding-box,padding-box,border-box;
+  box-shadow:inset 0 0 0 1.5px rgba(12,8,3,.85), 0 8px 22px -10px rgba(0,0,0,.5);
+  color:#FFF6E8}
+@media (hover:hover){.btn.btn-gold:hover,.cbtn.gold:hover,.btn.btn-ghost:hover,.hero-cta .btn-outline:hover{filter:brightness(1.14)}}
+
+/* gold restored: gold body + metal rim, no inner hairline */
+.btn.btn-gold,.cbtn.gold{
+  border:2.5px solid transparent;
+  background-image:
+    radial-gradient(130% 110% at 50% -35%, rgba(255,252,240,.55) 0%, rgba(255,252,240,.1) 45%, rgba(0,0,0,0) 65%),
+    linear-gradient(160deg,#F0D283 0%,#CCAA4C 58%,#E5C979 130%),
+    linear-gradient(160deg,#F7E4B6 0%,#A87A42 30%,#7A5527 55%,#EFD09A 80%,#8F6636 100%);
+  background-origin:padding-box,padding-box,border-box;
+  background-clip:padding-box,padding-box,border-box;
+  box-shadow:0 8px 22px -10px rgba(0,0,0,.45);
+  color:#241C10}
+
+/* LIGHT THEME */
+html[data-theme="light"] body{background-color:#F1F3F7;background-image:radial-gradient(ellipse at 50% -10%,#FFFFFF 0%,#F1F3F7 60%,#E9EDF4 100%);color:#1A1B1E}
+html[data-theme="light"] .top{border-block-end-color:rgba(116,92,29,.25)}
+html[data-theme="light"] .wm{color:#745C1D}
+html[data-theme="light"] .lp button{background-color:#FFFFFF;border-color:rgba(116,92,29,.4);color:#4A4C52}
+html[data-theme="light"] h1{color:#1A1B1E}
+html[data-theme="light"] .sub{color:#55575D}
+html[data-theme="light"] .cwrap{background-color:#FFFFFF;border-color:rgba(116,92,29,.4)}
+html[data-theme="light"] .citem .cn{color:#26282D}
+html[data-theme="light"] .citem .cp,html[data-theme="light"] .ctotal b{color:#745C1D}
+html[data-theme="light"] .citem{border-block-end-color:rgba(116,92,29,.15)}
+html[data-theme="light"] .ctotal{border-block-start-color:rgba(116,92,29,.25)}
+html[data-theme="light"] .ctotal span,html[data-theme="light"] .cempty{color:#55575D}
+html[data-theme="light"] .cdisc,html[data-theme="light"] .note{color:#8A8C92}
+html[data-theme="light"] .cfoot button{color:#6B6D73}
+html[data-theme="light"] .links a{color:#745C1D}
+.cdep{margin:14px 18px 4px;padding:12px 14px;border:1px solid rgba(240,210,131,.4);border-radius:12px;
+  background-color:rgba(240,210,131,.08);color:#EBD9A6;font-size:.82rem;line-height:1.5;text-align:center}
+html[data-theme="light"] .cdep{border-color:rgba(116,92,29,.35);background-color:rgba(116,92,29,.06);color:#6A5417}
+.cdep a{color:inherit;font-weight:600}
+.float-wa{position:fixed;inset-block-end:calc(18px + env(safe-area-inset-bottom,0px));z-index:80;display:none;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;background-image:linear-gradient(160deg,#2BD46E,#1EA855);color:#052611;border:1px solid #178a44;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 10px 26px -10px rgba(30,168,85,.6);cursor:pointer}
+.float-wa svg{width:19px;height:19px;flex:none}
+@media (max-width:1023px){
+  .float-wa{display:inline-flex !important;inset-inline-start:50%;inset-inline-end:auto;transform:translateX(-50%) translateY(160%);opacity:0;pointer-events:none;transition:transform .4s cubic-bezier(.2,.7,.3,1),opacity .3s !important}
+  .float-wa.show{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
+}
+@media (min-width:1024px){
+  .float-wa{display:inline-flex !important;inset-inline-start:50% !important;inset-inline-end:auto !important;margin-inline:0 !important;inset-block-end:calc(24px + env(safe-area-inset-bottom,0px));
+    transform:translateX(-50%) translateY(160%) !important;opacity:0;pointer-events:none;transition:transform .4s cubic-bezier(.2,.7,.3,1),opacity .3s !important}
+  .float-wa.show{transform:translateX(-50%) translateY(0) !important;opacity:1 !important;pointer-events:auto !important}
+}
+
+#contactM.cmask{padding:0}
+#contactM .ccard{align-self:flex-end;width:100%;max-width:100%;border-radius:20px 20px 0 0;margin-block-end:-20px;padding-block-end:20px}
+#contactM .cm-body{padding:10px 20px 8px;display:flex;flex-direction:column;gap:16px;max-width:640px;margin-inline:auto;width:100%}
+#contactM .cm-branch{padding:16px;border:1px solid rgba(240,210,131,.28);border-radius:16px;background-color:rgba(240,210,131,.05)}
+#contactM .cm-branch{border-color:rgba(116,92,29,.25);background-color:rgba(116,92,29,.04)}
+#contactM .cm-branch h4{margin:0 0 3px;font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600;color:#F0D283;letter-spacing:.01em}
+#contactM .cm-branch h4{color:#745C1D}
+#contactM .cm-sub{margin:0 0 14px;font-size:.82rem;color:#9AA6C0}
+#contactM .cm-sub{color:#6B6D73}
+#contactM .cm-acts{display:flex;flex-direction:column;gap:10px}
+#contactM .cm-acts .cbtn{justify-content:center;font-size:.9rem;padding-block:15px;border-radius:999px}
+#contactM .cm-acts .cbtn.wa{background-image:linear-gradient(160deg,#2BD46E,#1EA855)!important;color:#052611!important;border:1px solid #178a44!important}
+#contactM .cm-acts .cbtn.call{background-image:linear-gradient(160deg,#F0D283,#CCAA4C 58%,#E5C979 130%)!important;color:#241C10!important;border:1px solid #8A6E28!important;font-weight:600}
+#contactM .cm-acts .cbtn svg{width:17px;height:17px;flex:none}
+#contactM .cm-intro{padding:6px 20px 6px;text-align:center;max-width:640px;margin-inline:auto}
+#contactM .cm-intro .eyebrow{font-size:.68rem;letter-spacing:.22em;color:#CBA75A;margin:0 0 4px}
+#contactM .cm-intro p{margin:0;font-size:.9rem;color:#D9E2F0}
+#contactM .cm-intro p{color:#3A3C42}
+#contactM .cm-intro .eyebrow{color:#745C1D}
+#contactM .cm-email{display:flex;align-items:center;justify-content:center;gap:9px;margin:8px auto 2px;width:calc(100% - 72px);max-width:568px;padding:15px;
+  border-radius:999px;font-size:.9rem;font-weight:600;text-decoration:none;
+  background-image:linear-gradient(160deg,#8F6636 0%,#4A3315 58%,#6B4B22 130%);color:#FFF6E8;border:1px solid #33220C;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.12)}
+#contactM .cm-email:hover{filter:brightness(1.08)}
+#contactM .cm-email svg{width:16px;height:16px;flex:none}
+#contactM .ccard{min-height:100vh;border-radius:0;margin-block-end:0;display:flex;flex-direction:column;justify-content:center}
+#contactM .cm-body{gap:14px}
+#contactM .ccard{width:min(560px,94vw) !important;max-width:560px !important;max-height:90vh !important;
+    align-self:center !important;border-radius:20px !important;margin-block-end:0 !important}
+#contactM .cm-body{max-width:100% !important}
+.cm-branch{padding:16px;border:1px solid rgba(240,210,131,.28);border-radius:16px;background-color:rgba(240,210,131,.05)}
+.cm-branch{border-color:rgba(116,92,29,.25);background-color:rgba(116,92,29,.04)}
+.cm-branch h4{margin:0 0 3px;font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600;color:#F0D283;letter-spacing:.01em}
+.cm-branch h4{color:#745C1D}
+.cm-intro{padding:6px 20px 6px;text-align:center;max-width:640px;margin-inline:auto}
+.cm-intro .eyebrow{font-size:.68rem;letter-spacing:.22em;color:#CBA75A;margin:0 0 4px}
+.cm-intro p{margin:0;font-size:.9rem;color:#D9E2F0}
+.cm-intro p{color:#3A3C42}
+.cm-intro .eyebrow{color:#745C1D}
+.cm-email{display:flex;align-items:center;justify-content:center;gap:9px;margin:8px auto 2px;width:calc(100% - 72px);max-width:568px;padding:15px;
+  border-radius:999px;font-size:.9rem;font-weight:600;text-decoration:none;
+  background-image:linear-gradient(160deg,#8F6636 0%,#4A3315 58%,#6B4B22 130%);color:#FFF6E8;border:1px solid #33220C;box-shadow:inset 0 1.5px 0 rgba(255,255,255,.12)}
+.cm-email:hover{filter:brightness(1.08)}
+.cm-email svg{width:16px;height:16px;flex:none}
+.cm-sub{margin:0 0 14px;font-size:.82rem;color:#9AA6C0}
+.cm-sub{color:#6B6D73}
+.cm-acts{display:flex;flex-direction:column;gap:10px}
+.cm-acts .cbtn{justify-content:center;font-size:.9rem;padding-block:15px;border-radius:999px}
+.cm-acts .cbtn.wa{background-image:linear-gradient(160deg,#2BD46E,#1EA855)!important;color:#052611!important;border:1px solid #178a44!important}
+.cm-acts .cbtn.call{background-image:linear-gradient(160deg,#F0D283,#CCAA4C 58%,#E5C979 130%)!important;color:#241C10!important;border:1px solid #8A6E28!important;font-weight:600}
+.cm-acts .cbtn svg{width:17px;height:17px;flex:none}
+.cm-body{padding:10px 20px 8px;display:flex;flex-direction:column;gap:16px;max-width:640px;margin-inline:auto;width:100%}
+.cm-body{gap:14px}
+.cm-body{max-width:100% !important}
+html[data-theme="light"] #contactM .cm-branch{border-color:rgba(116,92,29,.25);background-color:rgba(116,92,29,.04)}
+html[data-theme="light"] #contactM .cm-branch h4{color:#745C1D}
+html[data-theme="light"] #contactM .cm-sub{color:#6B6D73}
+html[data-theme="light"] #contactM .cm-intro p{color:#3A3C42}
+html[data-theme="light"] #contactM .cm-intro .eyebrow{color:#745C1D}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Your Cart — FILTER Ladies Salon","url":"https://filtersalon.com/cart.html","isPartOf":{"@type":"WebSite","name":"FILTER Ladies Salon","url":"https://filtersalon.com/"}}</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your Cart — FILTER Ladies Salon Abu Dhabi">
+<meta property="og:description" content="Review your selected treatments and send them to FILTER on WhatsApp in one tap.">
+<meta property="og:url" content="https://filtersalon.com/cart.html">
+<meta property="og:image" content="https://filtersalon.com/og-salon.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<header class="top">
+  <a class="wm" href="/">FILTER</a>
+  <div class="lp" role="group" aria-label="Language">
+    <button type="button" data-l="en" aria-pressed="true">EN</button>
+    <button type="button" data-l="ar" aria-pressed="false">عربي</button>
+    <button type="button" data-l="ru" aria-pressed="false">RU</button>
+  </div>
+</header>
+<main>
+  <h1 id="t"></h1>
+  <p class="sub" id="st"></p>
+  <div class="cwrap">
+    <div class="cbody" id="cartList" style="padding:10px 18px"></div>
+    <div class="ctotal"><span id="tl"></span><b id="cartTotal">AED 0</b></div>
+    <div class="cacts">
+      <a class="cbtn gold" id="waRaha" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5L9.7 8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.7a11 11 0 0 0 4.6 4.2c1.7.8 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg><span id="br"></span></a>
+      <a class="cbtn bronze" id="waBateen" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.2-.3.3-.5v-.5L9.7 8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.9.9-1.1 2.2-.2 3.7a11 11 0 0 0 4.6 4.2c1.7.8 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2Z"/></svg><span id="bb"></span></a>
+    </div>
+    <div class="cfoot" style="justify-content:flex-end"><button type="button" id="cartClear"></button></div>
+    <p class="cdep" id="cdep"></p>
+    <p class="cdisc" id="dc"></p>
+  </div>
+  <p class="note" id="nt"></p>
+  <div class="links"><a href="/services.html" id="bk"></a><a href="/" id="hm"></a></div>
+</main>
+<footer style="text-align:center;padding:24px;opacity:.6;font-size:.8rem">© FILTER Ladies Salon · Abu Dhabi</footer>
+<script>
+var DICT={"en": { "dep": "No payment is taken on this site. When you message us on WhatsApp or call, a deposit confirms your booking — AED 200 for hair, AED 50 for beauty — and comes off your final bill. <a href=\"/policies.html\">Deposit policy</a>", "title": "Your Cart", "sub": "Everything you're thinking about, in one place.", "empty": "Your cart is empty — tap any service on our menus to add it.", "total": "Total", "raha": "WhatsApp · Al Raha", "bateen": "WhatsApp · Al Bateen, Marasy", "clear": "Clear cart", "back": "← Back to services", "home": "Home", "disc": "Your cart lives only in this browser. Nothing is stored on our side or sent anywhere until you choose to message us on WhatsApp.", "note": "Prices marked “from” are starting prices — your stylist will confirm at consultation."}, "ar": { "dep": "لا يتم أي دفع عبر هذا الموقع. عند التواصل عبر واتساب أو الهاتف، يؤكد العربون حجزك — 200 درهم للشعر، 50 درهم للتجميل — ويُخصم من فاتورتك النهائية. <a href=\"/policies.html\">سياسة العربون</a>", "title": "سلتك", "sub": "كل ما تفكرين فيه، في مكان واحد.", "empty": "سلتك فارغة — اضغطي أي خدمة في قوائمنا لإضافتها.", "total": "الإجمالي", "raha": "واتساب · الراحة", "bateen": "واتساب · البطين، المراسي", "clear": "تفريغ السلة", "back": "← العودة للخدمات", "home": "الرئيسية", "disc": "سلتك محفوظة في متصفحك فقط. لا يُخزَّن أي شيء لدينا ولا يُرسل لأي جهة حتى تختاري مراسلتنا عبر واتساب.", "note": "الأسعار المسبوقة بـ«من» هي أسعار مبدئية — تؤكدها خبيرتك عند الاستشارة."}, "ru": { "dep": "Оплата на сайте не взимается. При обращении в WhatsApp или по телефону депозит подтверждает запись — 200 AED волосы, 50 AED красота — и вычитается из итогового счёта. <a href=\"/policies.html\">Политика депозита</a>", "title": "Ваша корзина", "sub": "Всё, что вы присмотрели — в одном месте.", "empty": "Корзина пуста — коснитесь любой услуги в меню, чтобы добавить.", "total": "Итого", "raha": "WhatsApp · Аль-Раха", "bateen": "WhatsApp · Аль-Батин, Мараси", "clear": "Очистить корзину", "back": "← Назад к услугам", "home": "Главная", "disc": "Корзина хранится только в вашем браузере. Мы ничего не сохраняем и никуда не отправляем, пока вы сами не напишете нам в WhatsApp.", "note": "Цены с пометкой «от» — стартовые; мастер подтвердит на консультации."}};
+var LSK="filterCart",NUM={raha:"971502676751",bateen:"971565264551"};
+var TXT={en:{from:"from",intro:"Hi FILTER! I'd like to enquire about the following:",total:"Estimated total",close:"What times are available?"},
+ ar:{from:"من",intro:"مرحباً فلتر! أود الاستفسار عن الخدمات التالية:",total:"الإجمالي التقريبي",close:"ما الأوقات المتاحة؟"},
+ ru:{from:"от",intro:"Здравствуйте, FILTER! Хочу узнать о следующих услугах:",total:"Примерный итог",close:"Какое время свободно?"}};
+var lang="en";
+function load(){try{return JSON.parse(localStorage.getItem(LSK))||[];}catch(e){return[];}}
+function save(c){try{localStorage.setItem(LSK,JSON.stringify(c));}catch(e){}}
+function fmt(p,f){return (f?TXT[lang].from+" ":"")+"AED "+p.toLocaleString("en-US");}
+function total(c){var s=0,f=false;c.forEach(function(i){s+=i.p;if(i.f)f=true;});return{s:s,f:f};}
+function msgAll(c){var t=TXT[lang],lines=c.map(function(i){return "• "+i.n+" — "+(i.f?t.from+" ":"")+"AED "+i.p;});
+ var tt=total(c);return encodeURIComponent(t.intro+"\n"+lines.join("\n")+"\n"+t.total+": "+(tt.f?t.from+" ":"")+"AED "+tt.s+"\n"+t.close);}
+function render(){
+  var d=DICT[lang],c=load();
+  document.documentElement.lang=lang;document.documentElement.dir=(lang==="ar"?"rtl":"ltr");
+  ["t","st","tl","br","bb","dc","nt","bk","hm"].forEach(function(id,i){
+    document.getElementById(id).textContent=[d.title,d.sub,d.total,d.raha,d.bateen,d.disc,d.note,d.back,d.home][i];});
+  document.getElementById("cartClear").textContent=d.clear;var _dep=document.getElementById("cdep");if(_dep)_dep.innerHTML=d.dep||DICT.en.dep;
+  var list=document.getElementById("cartList");
+  if(!c.length){list.innerHTML='<p class="cempty">'+d.empty+'</p>';}
+  else{list.innerHTML=c.map(function(i,ix){
+    return '<div class="citem"><span class="cn"></span><span class="cp">'+fmt(i.p,i.f)+'</span>'+
+     '<button class="crm" type="button" data-ix="'+ix+'" aria-label="Remove"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>';}).join('');
+    list.querySelectorAll(".cn").forEach(function(el,ix){el.textContent=c[ix].n;});}
+  var t=total(c);
+  document.getElementById("cartTotal").textContent=fmt(t.s,t.f);
+  var m=msgAll(c);
+  document.getElementById("waRaha").href="https://wa.me/"+NUM.raha+"?text="+m;
+  document.getElementById("waBateen").href="https://wa.me/"+NUM.bateen+"?text="+m;
+}
+document.addEventListener("click",function(e){
+  var lb=e.target.closest(".lp button");
+  if(lb){lang=lb.dataset.l;document.querySelectorAll(".lp button").forEach(function(b){b.setAttribute("aria-pressed",b===lb?"true":"false");});render();return;}
+  if(e.target.closest("#cartClear")){save([]);render();return;}
+  var rm=e.target.closest(".crm");
+  if(rm){var c=load();c.splice(parseInt(rm.dataset.ix,10),1);save(c);render();return;}
+});
+window.addEventListener("storage",function(e){if(e.key===LSK)render();});
+render();
+</script>
+<a id="floatWa" class="float-wa" href="#" aria-label="Contact" data-i18n-aria="float.contact">
+ <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
+ <span data-i18n="float.contact">Contact</span>
+</a>
+<div class="cmask contact-mask" id="contactM" role="dialog" aria-modal="true" aria-label="Contact FILTER">
+ <div class="ccard contact-card">
+  <div class="chead"><b data-i18n="cm.title">Contact FILTER</b><button class="cx" type="button" data-i18n-aria="ct.close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="cm-intro"><p class="eyebrow" data-i18n="cm.eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p></div>
+  <div class="cm-body">
+   <div class="cm-branch">
+    <h4 data-i18n="cm.raha">Al Raha</h4>
+    <p class="cm-sub" data-i18n="cm.rahaAdr">Al Faridah Complex</p>
+    <div class="cm-acts">
+     <a class="cbtn wa" href="https://wa.me/971502676751" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span data-i18n="cm.wa">WhatsApp</span></a>
+     <a class="cbtn call" href="tel:+971502676751"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>+971 50 267 6751</span></a>
+    </div>
+   </div>
+   <div class="cm-branch">
+    <h4 data-i18n="cm.bateen">Al Bateen, Marasy</h4>
+    <p class="cm-sub" data-i18n="cm.bateenAdr">Marasy Building 4, Shop 2</p>
+    <div class="cm-acts">
+     <a class="cbtn wa" href="https://wa.me/971565264551" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span data-i18n="cm.wa">WhatsApp</span></a>
+     <a class="cbtn call" href="tel:+971565264551"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>+971 56 526 4551</span></a>
+    </div>
+   </div>
+  </div>
+  <a class="cm-email" href="mailto:info@filterladiessalon.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@filterladiessalon.com</a>
+ </div>
+</div>
+<script>(function(){try{
+  var pill=document.getElementById("floatWa"), m=document.getElementById("contactM");
+  if(!pill||!m)return;
+  function open(){m.classList.add("open");document.body.style.overflow="hidden";}
+  function close(){m.classList.remove("open");document.body.style.overflow="";}
+  pill.addEventListener("click",function(e){e.preventDefault();open();});
+  m.addEventListener("click",function(e){if(e.target===m||e.target.closest(".cx"))close();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+  var hero=document.querySelector(".hero"), contact=document.getElementById("contact");
+  function upd(){ if(!hero)return; var past=window.scrollY>hero.offsetHeight*0.85;
+    var near=contact&&(contact.getBoundingClientRect().top<window.innerHeight);
+    pill.classList.toggle("show", past && !near); }
+  upd(); window.addEventListener("scroll",upd,{passive:true}); window.addEventListener("resize",upd);
+}catch(_e){}})();</script>
+</body>
+</html>
