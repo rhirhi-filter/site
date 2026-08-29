@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="theme-color" id="themeColorMeta" content="#2C3553">
-<script>try{if(localStorage.getItem("filterTheme")==="light"){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}var m=document.getElementById("themeColorMeta");if(m)m.setAttribute("content",(localStorage.getItem("filterTheme")==="light")?"#FAFBFC":"#2C3553");}catch(e){}</script>
+<meta name="theme-color" id="themeColorMeta" content="#0A0F18">
+<script>try{if(localStorage.getItem("filterTheme")==="light"){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}var m=document.getElementById("themeColorMeta");if(m)m.setAttribute("content",(localStorage.getItem("filterTheme")==="light")?"#FAFBFC":"#0A0F18");}catch(e){}</script>
 <meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,follow">
@@ -287,7 +287,7 @@ html[data-theme="light"] #contactM .cm-intro .eyebrow{color:#745C1D}
 <footer style="text-align:center;padding:24px;opacity:.6;font-size:.8rem">© FILTER Ladies Salon · Abu Dhabi</footer>
 <script>
 var DICT={"en": { "dep": "No payment is taken on this site. When you message us on WhatsApp or call, a deposit confirms your booking — AED 200 for hair, AED 50 for beauty — and comes off your final bill. <a href=\"/policies.html\">Deposit policy</a>", "title": "Your Cart", "sub": "Everything you're thinking about, in one place.", "empty": "Your cart is empty — tap any service on our menus to add it.", "total": "Total", "raha": "WhatsApp · Al Raha", "bateen": "WhatsApp · Al Bateen, Marasy", "clear": "Clear cart", "back": "← Back to services", "home": "Home", "disc": "Your cart lives only in this browser. Nothing is stored on our side or sent anywhere until you choose to message us on WhatsApp.", "note": "Prices marked “from” are starting prices — your stylist will confirm at consultation."}, "ar": { "dep": "لا يتم أي دفع عبر هذا الموقع. عند التواصل عبر واتساب أو الهاتف، يؤكد العربون حجزك — 200 درهم للشعر، 50 درهم للتجميل — ويُخصم من فاتورتك النهائية. <a href=\"/policies.html\">سياسة العربون</a>", "title": "سلتك", "sub": "كل ما تفكرين فيه، في مكان واحد.", "empty": "سلتك فارغة — اضغطي أي خدمة في قوائمنا لإضافتها.", "total": "الإجمالي", "raha": "واتساب · الراحة", "bateen": "واتساب · البطين، المراسي", "clear": "تفريغ السلة", "back": "← العودة للخدمات", "home": "الرئيسية", "disc": "سلتك محفوظة في متصفحك فقط. لا يُخزَّن أي شيء لدينا ولا يُرسل لأي جهة حتى تختاري مراسلتنا عبر واتساب.", "note": "الأسعار المسبوقة بـ«من» هي أسعار مبدئية — تؤكدها خبيرتك عند الاستشارة."}, "ru": { "dep": "Оплата на сайте не взимается. При обращении в WhatsApp или по телефону депозит подтверждает запись — 200 AED волосы, 50 AED красота — и вычитается из итогового счёта. <a href=\"/policies.html\">Политика депозита</a>", "title": "Ваша корзина", "sub": "Всё, что вы присмотрели — в одном месте.", "empty": "Корзина пуста — коснитесь любой услуги в меню, чтобы добавить.", "total": "Итого", "raha": "WhatsApp · Аль-Раха", "bateen": "WhatsApp · Аль-Батин, Мараси", "clear": "Очистить корзину", "back": "← Назад к услугам", "home": "Главная", "disc": "Корзина хранится только в вашем браузере. Мы ничего не сохраняем и никуда не отправляем, пока вы сами не напишете нам в WhatsApp.", "note": "Цены с пометкой «от» — стартовые; мастер подтвердит на консультации."}};
-var LSK="filterCart",NUM={raha:"971502676751",bateen:"971565264551"};
+var LSK="filterCart",NUM={raha:"971502676751",bateen:"97125858987"};
 var TXT={en:{from:"from",intro:"Hi FILTER! I'd like to enquire about the following:",total:"Estimated total",close:"What times are available?"},
  ar:{from:"من",intro:"مرحباً فلتر! أود الاستفسار عن الخدمات التالية:",total:"الإجمالي التقريبي",close:"ما الأوقات المتاحة؟"},
  ru:{from:"от",intro:"Здравствуйте, FILTER! Хочу узнать о следующих услугах:",total:"Примерный итог",close:"Какое время свободно?"}};
@@ -326,48 +326,8 @@ document.addEventListener("click",function(e){
 window.addEventListener("storage",function(e){if(e.key===LSK)render();});
 render();
 </script>
-<a id="floatWa" class="float-wa" href="#" aria-label="Contact" data-i18n-aria="float.contact">
- <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg>
- <span data-i18n="float.contact">Contact</span>
-</a>
-<div class="cmask contact-mask" id="contactM" role="dialog" aria-modal="true" aria-label="Contact FILTER">
- <div class="ccard contact-card">
-  <div class="chead"><b data-i18n="cm.title">Contact FILTER</b><button class="cx" type="button" data-i18n-aria="ct.close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
-  <div class="cm-intro"><p class="eyebrow" data-i18n="cm.eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p></div>
-  <div class="cm-body">
-   <div class="cm-branch">
-    <h4 data-i18n="cm.raha">Al Raha</h4>
-    <p class="cm-sub" data-i18n="cm.rahaAdr">Al Faridah Complex</p>
-    <div class="cm-acts">
-     <a class="cbtn wa" href="https://wa.me/971502676751" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span data-i18n="cm.wa">WhatsApp</span></a>
-     <a class="cbtn call" href="tel:+971502676751"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>+971 50 267 6751</span></a>
-    </div>
-   </div>
-   <div class="cm-branch">
-    <h4 data-i18n="cm.bateen">Al Bateen, Marasy</h4>
-    <p class="cm-sub" data-i18n="cm.bateenAdr">Marasy Building 4, Shop 2</p>
-    <div class="cm-acts">
-     <a class="cbtn wa" href="https://wa.me/971565264551" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span data-i18n="cm.wa">WhatsApp</span></a>
-     <a class="cbtn call" href="tel:+971565264551"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span>+971 56 526 4551</span></a>
-    </div>
-   </div>
-  </div>
-  <a class="cm-email" href="mailto:info@filterladiessalon.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@filterladiessalon.com</a>
- </div>
-</div>
-<script>(function(){try{
-  var pill=document.getElementById("floatWa"), m=document.getElementById("contactM");
-  if(!pill||!m)return;
-  function open(){m.classList.add("open");document.body.style.overflow="hidden";}
-  function close(){m.classList.remove("open");document.body.style.overflow="";}
-  pill.addEventListener("click",function(e){e.preventDefault();open();});
-  m.addEventListener("click",function(e){if(e.target===m||e.target.closest(".cx"))close();});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
-  var hero=document.querySelector(".hero"), contact=document.getElementById("contact");
-  function upd(){ if(!hero)return; var past=window.scrollY>hero.offsetHeight*0.85;
-    var near=contact&&(contact.getBoundingClientRect().top<window.innerHeight);
-    pill.classList.toggle("show", past && !near); }
-  upd(); window.addEventListener("scroll",upd,{passive:true}); window.addEventListener("resize",upd);
-}catch(_e){}})();</script>
+
+
+
 </body>
 </html>
