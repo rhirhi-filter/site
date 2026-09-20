@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" id="themeColorMeta" content="#0A0F18">
 <script>try{if(localStorage.getItem("filterTheme")==="light"){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}var m=document.getElementById("themeColorMeta");if(m)m.setAttribute("content",(localStorage.getItem("filterTheme")==="light")?"#FAFBFC":"#0A0F18");}catch(e){}</script>
@@ -248,6 +249,23 @@ html[data-theme="light"] #contactM .cm-branch h4{color:#745C1D}
 html[data-theme="light"] #contactM .cm-sub{color:#6B6D73}
 html[data-theme="light"] #contactM .cm-intro p{color:#3A3C42}
 html[data-theme="light"] #contactM .cm-intro .eyebrow{color:#745C1D}
+
+.skip-link{position:absolute;inset-inline-start:12px;top:-60px;z-index:999;padding:10px 16px;border-radius:10px;background:#F0D283;color:#241C10;font:600 .85rem "Manrope",sans-serif;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:12px;outline:2px solid #241C10;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid #F0D283;outline-offset:3px;border-radius:6px}
+html[data-theme="light"] a:focus-visible,html[data-theme="light"] button:focus-visible,html[data-theme="light"] input:focus-visible,html[data-theme="light"] select:focus-visible,html[data-theme="light"] textarea:focus-visible{outline-color:#8A6E28}
+@media print{
+  *{background:#fff !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}
+  .nav,.mnav,.float-wa,#cartFab,#toTop,#cartToast,.cmask,.xpanel,.hero-media,.hshow,.msec-img,.gal-grid,#gallery,.lb,.swipe-dots,.chips-sticky,.price-tabs,.cart-hint,.call-cta-wrap,footer .fmade,.theme-nav,.lang-wrap,.skip-link,video,.mono-mark{display:none !important}
+  .price-panel{display:block !important;page-break-inside:avoid}
+  .price-panel::before{content:attr(data-cat);display:block;font:700 14pt "Manrope",sans-serif;text-transform:capitalize;margin:18pt 0 6pt;border-bottom:1pt solid #000}
+  .price-groups{column-count:2;column-gap:24pt}
+  .price-group{break-inside:avoid;border:0 !important;padding:0 !important;margin:0 0 12pt !important}
+  .price-row{display:flex;justify-content:space-between;border-bottom:1px dotted #999;padding:2pt 0}
+  .pr-price{font-weight:700}
+  section{padding:8pt 0 !important}
+  a[href^="http"]:not(.btn)::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Your Cart — FILTER Ladies Salon","url":"https://filtersalon.com/cart.html","isPartOf":{"@type":"WebSite","name":"FILTER Ladies Salon","url":"https://filtersalon.com/"}}</script>
 <meta property="og:type" content="website">
@@ -258,6 +276,7 @@ html[data-theme="light"] #contactM .cm-intro .eyebrow{color:#745C1D}
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <header class="top">
   <a class="wm" href="index.html">FILTER</a>
   <div class="lp" role="group" aria-label="Language">
@@ -266,7 +285,7 @@ html[data-theme="light"] #contactM .cm-intro .eyebrow{color:#745C1D}
     <button type="button" data-l="ru" aria-pressed="false">RU</button>
   </div>
 </header>
-<main>
+<main id="main">
   <h1 id="t"></h1>
   <p class="sub" id="st"></p>
   <div class="cwrap">

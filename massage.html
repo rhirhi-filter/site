@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" id="themeColorMeta" content="#0A0F18">
 <script>try{if(localStorage.getItem("filterTheme")==="light"){document.documentElement.dataset.theme="light";document.documentElement.style.colorScheme="light";}var m=document.getElementById("themeColorMeta");if(m)m.setAttribute("content",(localStorage.getItem("filterTheme")==="light")?"#FAFBFC":"#0A0F18");}catch(e){}</script>
@@ -29,13 +30,13 @@
 <meta property="og:locale" content="en_AE">
 <meta property="og:locale:alternate" content="ar_AE">
 <meta property="og:locale:alternate" content="ru_RU">
-<meta property="og:image" content="https://filtersalon.com/og-salon.jpg">
+<meta property="og:image" content="https://filtersalon.com/og-massage.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="FILTER Ladies Salon — luxury hair and beauty, Abu Dhabi">
 <meta property="og:image:alt" content="FILTER Ladies Salon, Abu Dhabi">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://filtersalon.com/og-salon.jpg">
+<meta name="twitter:image" content="https://filtersalon.com/og-massage.jpg">
 <meta name="geo.region" content="AE-AZ">
 <meta name="geo.placename" content="Abu Dhabi">
 <meta name="geo.position" content="24.5426;54.6032">
@@ -590,7 +591,7 @@ html[dir="rtl"] .faq summary{font-family:"Tajawal";font-weight:700}
 #pricing{scroll-margin-top:var(--navh,64px)}
 .price-tabs-dup{display:none;margin-block-start:30px}
 .hero .eyebrow-below{margin-block:14px 0}
-.price-tabs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:14px clamp(22px,5.5vw,46px) 28px;margin:18px calc(-1 * clamp(22px,5.5vw,46px)) 22px;scroll-snap-type:x proximity}
+.price-tabs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:14px clamp(22px,5.5vw,46px) 14px;margin:18px calc(-1 * clamp(22px,5.5vw,46px)) 11px;scroll-snap-type:x proximity}
 .price-tabs::-webkit-scrollbar{display:none}
 .price-tab{flex:0 0 auto;padding:11px 22px;border-radius:999px;border:1px solid rgba(240,210,131,.42);background-color:transparent;color:#DEE5F3;font-family:"Manrope",sans-serif;font-weight:600;font-size:.9rem;letter-spacing:.03em;cursor:pointer;transition:color .25s ease,border-color .25s ease,background-color .25s ease;white-space:nowrap;scroll-snap-align:center}
 @media (hover:hover){.price-tab:hover{border-color:rgba(240,210,131,.75);color:#FBF8F0}}
@@ -954,7 +955,7 @@ hr.rule::after{content:"";position:absolute;inset-block:-1px;inset-inline-start:
 @media (min-width:1024px){
   .hero{min-height:100svh;display:flex;align-items:center;box-sizing:border-box}
   .hero>.wrap{width:100%}
-  section.sec-marble,section.sec-ivory,section.gr-sec,section.picker-sec{min-height:92svh;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;padding-block:110px}
+  section.sec-marble,section.sec-ivory,section.gr-sec,section.picker-sec{min-height:0;display:block;box-sizing:border-box;padding-block:clamp(56px,6.2vw,90px)}
   section.sec-marble>.wrap,section.sec-ivory>.wrap,section.gr-sec>.wrap,section.picker-sec>.wrap{width:100%}
 }
 
@@ -1280,7 +1281,7 @@ html[data-theme="light"] .hero .fw,html[data-theme="light"] .hero .fw-mark,
 html[data-theme="light"] .hero [class*="mono"],html[data-theme="light"] .hero [class*="mark"]{filter:none !important;text-shadow:none;box-shadow:none}
 
 @media (max-width:1023px){
-  header,.nav{transition:transform .32s ease}
+  header.nav,header,.nav{transition:transform .32s ease,background-color .35s,box-shadow .35s}
   .nav-hidden{transform:translateY(-102%)}
 }
 
@@ -1684,9 +1685,99 @@ html[data-theme="light"] .call-branch .cb-num{color:#6A4E14}
 .cb-call{background-image:linear-gradient(160deg,#F0D283,#CCAA4C 58%,#E5C979 130%);color:#241C10;border:1px solid #8A6E28}
 .cb-wa{background-image:linear-gradient(160deg,#2BD46E,#1EA855);color:#052611;border:1px solid #178a44}
 html[data-theme="light"] .cb-call{border-color:#8A6E28}
+
+
+.skip-link{position:absolute;inset-inline-start:12px;top:-60px;z-index:999;padding:10px 16px;border-radius:10px;background:#F0D283;color:#241C10;font:600 .85rem "Manrope",sans-serif;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:12px;outline:2px solid #241C10;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:2px solid #F0D283;outline-offset:3px;border-radius:6px}
+html[data-theme="light"] a:focus-visible,html[data-theme="light"] button:focus-visible,html[data-theme="light"] input:focus-visible,html[data-theme="light"] select:focus-visible,html[data-theme="light"] textarea:focus-visible{outline-color:#8A6E28}
+@media print{
+  *{background:#fff !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}
+  .nav,.mnav,.float-wa,#cartFab,#toTop,#cartToast,.cmask,.xpanel,.hero-media,.hshow,.msec-img,.gal-grid,#gallery,.lb,.swipe-dots,.chips-sticky,.price-tabs,.cart-hint,.call-cta-wrap,footer .fmade,.theme-nav,.lang-wrap,.skip-link,video,.mono-mark{display:none !important}
+  .price-panel{display:block !important;page-break-inside:avoid}
+  .price-panel::before{content:attr(data-cat);display:block;font:700 14pt "Manrope",sans-serif;text-transform:capitalize;margin:18pt 0 6pt;border-bottom:1pt solid #000}
+  .price-groups{column-count:2;column-gap:24pt}
+  .price-group{break-inside:avoid;border:0 !important;padding:0 !important;margin:0 0 12pt !important}
+  .price-row{display:flex;justify-content:space-between;border-bottom:1px dotted #999;padding:2pt 0}
+  .pr-price{font-weight:700}
+  section{padding:8pt 0 !important}
+  a[href^="http"]:not(.btn)::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
+}
+
+.sr-svc{position:relative;padding-inline-end:52px}
+.sr-add{position:absolute;inset-inline-end:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:9px;
+  display:grid;place-items:center;cursor:pointer;border:1px solid #8A6E28;
+  background-image:linear-gradient(160deg,#F0D283,#CCAA4C 58%,#E5C979 130%);color:#241C10;transition:filter .15s,transform .15s}
+.sr-add:hover{filter:brightness(1.08);transform:translateY(-50%) scale(1.06)}
+.sr-add svg{width:17px;height:17px}
+html[data-theme="light"] .sr-add{border-color:#8A6E28}
+
+/* flow */
+.rule{display:none}
+section{padding-block:clamp(64px,8.5vw,112px)}
+section:nth-of-type(even){padding-block-start:clamp(52px,7vw,92px)}
+.h-sec{font-size:clamp(2.4rem,6.4vw,4.9rem);letter-spacing:-.025em;line-height:.98}
+.h-sec .acc{font-style:italic;font-weight:400;color:#F6E7B8;-webkit-text-fill-color:#F6E7B8;letter-spacing:-.01em}
+html[data-theme="light"] .h-sec .acc{color:#A98632;-webkit-text-fill-color:#A98632}
+.eyebrow{letter-spacing:.42em;opacity:.85}
+@media (min-width:1024px){
+  .wrap>div[style*="text-align:center"]:not(.call-cta-wrap):not(.cta-wrap):not(.faq-head){display:grid;grid-template-columns:1.25fr 1fr;column-gap:56px;align-items:end;text-align:start !important;margin-block-end:8px}
+  .wrap>div[style*="text-align:center"]>.eyebrow{grid-column:1/-1}
+  .wrap>div[style*="text-align:center"]>.h-sec{grid-column:1;margin:0}
+  .wrap>div[style*="text-align:center"]>.lede{grid-column:2;margin:0 0 .45em;max-width:44ch;justify-self:start}
+  .wrap>div[style*="text-align:center"]>.cart-hint,.wrap>div[style*="text-align:center"]>.hero-cta,.wrap>div[style*="text-align:center"]>.gr-ctas{grid-column:1/-1;justify-self:center}
+  .h-sec{font-size:clamp(3.4rem,5.4vw,5.6rem)}
+}
+.cards .card:nth-child(3n+1){border-radius:30px 14px 14px 14px}
+.cards .card:nth-child(3n+2){border-radius:14px 14px 30px 14px}
+.cards .card:nth-child(3n){border-radius:14px 30px 14px 14px}
+.cards.reveal .card{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.cards.reveal.in .card{opacity:1;transform:none}
+.cards.reveal.in .card:nth-child(2){transition-delay:.08s}.cards.reveal.in .card:nth-child(3){transition-delay:.16s}
+.cards.reveal.in .card:nth-child(4){transition-delay:.24s}.cards.reveal.in .card:nth-child(5){transition-delay:.32s}.cards.reveal.in .card:nth-child(6){transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){.cards.reveal .card{transition-delay:0s !important}}
+
+/* cascade */
+.cascade>*{opacity:0;transform:translate3d(0,26px,0);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.cascade.in>*{opacity:1;transform:none}
+.cascade.in>:nth-child(2){transition-delay:.09s}.cascade.in>:nth-child(3){transition-delay:.18s}.cascade.in>:nth-child(4){transition-delay:.27s}
+.cascade.in>:nth-child(5){transition-delay:.36s}.cascade.in>:nth-child(6){transition-delay:.45s}.cascade.in>:nth-child(7){transition-delay:.54s}
+.cascade.in>:nth-child(8){transition-delay:.63s}.cascade.in>:nth-child(9){transition-delay:.72s}.cascade.in>:nth-child(10){transition-delay:.8s}
+/* price tabs: groups cascade up whenever a tab opens */
+@keyframes pgUp{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
+.price-panel.active .price-group{animation:pgUp .6s cubic-bezier(.2,.7,.2,1) both}
+.price-panel.active .price-group:nth-child(2){animation-delay:.07s}.price-panel.active .price-group:nth-child(3){animation-delay:.14s}
+.price-panel.active .price-group:nth-child(4){animation-delay:.21s}.price-panel.active .price-group:nth-child(5){animation-delay:.28s}
+.price-panel.active .price-group:nth-child(6){animation-delay:.35s}.price-panel.active .price-group:nth-child(7){animation-delay:.42s}.price-panel.active .price-group:nth-child(8){animation-delay:.49s}
+details[open]>*:not(summary){animation:pgUp .45s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){.cascade>*{opacity:1 !important;transform:none !important;transition:none !important}.price-panel.active .price-group,details[open]>*{animation:none !important}}
+
+/* desktop cards: contained grid, sized to the count */
+@media (min-width:1024px){
+  .cards{display:grid !important;grid-template-columns:repeat(3,1fr) !important;gap:22px;overflow:visible !important;margin-inline:0 !important;padding:0 !important;scroll-snap-type:none !important}
+  .cards .card{flex:none !important;width:auto !important;max-width:none !important;scroll-snap-align:none}
+  .cards:has(> :nth-child(4):last-child){grid-template-columns:repeat(2,1fr) !important}
+  .cards:has(> .has-bg:nth-child(6)){grid-auto-rows:minmax(300px,auto);grid-auto-flow:dense}
+  .cards:has(> .has-bg:nth-child(6)) .card:first-child{grid-row:span 2}
+  .cards:has(> .has-bg:nth-child(6)) .card:nth-child(4),.cards:has(> .has-bg:nth-child(6)) .card:nth-child(6){grid-column:span 2}
+  .wrap>div[style*="text-align:center"]>.call-cta-wrap,.wrap>div[style*="text-align:center"]>.ractions{grid-column:1/-1;justify-self:center;width:100%}
+}
+
+/* desktop vertical rhythm */
+@media (min-width:1024px){
+  section{padding-block:clamp(56px,6.2vw,90px)}
+  section:nth-of-type(even){padding-block-start:clamp(48px,5.4vw,78px)}
+  .h-sec{font-size:clamp(3.2rem,5vw,5rem)}
+  .wrap>div[style*="text-align:center"]:not(.call-cta-wrap){margin-block-end:2px}
+  .cards .card{padding:26px 24px 22px}
+  .card .desc{margin-block-end:12px}
+  .card .wm{margin-block-end:-30px}
+  .card ul{margin-block-end:14px}
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 
 <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true"><symbol id="fmono-sp" viewBox="-9.6715 0 283.181 283.181"><defs><linearGradient id="fg-sp" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0" stop-color="#F2E0A8"/><stop offset="30%" stop-color="#E6C877"/><stop offset="62%" stop-color="#C9A250"/><stop offset="100%" stop-color="#EFD99C"/></linearGradient><clipPath id="clip-0-sp"><path clip-rule="nonzero" d="M 33.835938 25.933594 L 84.300781 25.933594 L 84.300781 36.578125 L 33.835938 36.578125 Z M 33.835938 36.578125 L 44.480469 36.578125 L 44.480469 76.398438 L 33.835938 76.398438 Z M 33.835938 36.578125 "/></clipPath><clipPath id="clip-1-sp"><path clip-rule="nonzero" d="M 219.195312 205.964844 L 229.839844 205.964844 L 229.839844 245.789062 L 219.195312 245.789062 Z M 179.371094 245.789062 L 229.839844 245.789062 L 229.839844 256.433594 L 179.371094 256.433594 Z M 179.371094 245.789062 "/></clipPath><clipPath id="clip-2-sp"><path clip-rule="nonzero" d="M 179.371094 25.933594 L 229.839844 25.933594 L 229.839844 36.578125 L 179.371094 36.578125 Z M 219.195312 36.578125 L 229.839844 36.578125 L 229.839844 76.398438 L 219.195312 76.398438 Z M 219.195312 36.578125 "/></clipPath><clipPath id="clip-3-sp"><path clip-rule="nonzero" d="M 33.835938 205.964844 L 44.480469 205.964844 L 44.480469 245.789062 L 33.835938 245.789062 Z M 33.835938 245.789062 L 84.296875 245.789062 L 84.296875 256.433594 L 33.835938 256.433594 Z M 33.835938 245.789062 "/></clipPath><clipPath id="clip-4-sp"><path clip-rule="nonzero" d="M 126 134 L 138 134 L 138 149 L 126 149 Z M 126 134 "/></clipPath><clipPath id="clip-5-sp"><path clip-rule="nonzero" d="M 129.628906 138.507812 C 127.769531 140.492188 126.1875 141.183594 126.1875 141.183594 C 126.1875 141.183594 127.769531 141.871094 129.628906 143.855469 C 130.992188 145.308594 131.839844 148.082031 131.839844 148.082031 C 131.839844 148.082031 132.683594 145.308594 134.042969 143.855469 C 135.90625 141.871094 137.488281 141.183594 137.488281 141.183594 C 137.488281 141.183594 135.90625 140.492188 134.042969 138.507812 C 132.683594 137.058594 131.839844 134.28125 131.839844 134.28125 C 131.839844 134.28125 130.992188 137.058594 129.628906 138.507812 "/></clipPath><clipPath id="clip-6-sp"><path clip-rule="nonzero" d="M 137 146 L 209 146 L 209 236 L 137 236 Z M 137 146 "/></clipPath><clipPath id="clip-7-sp"><path clip-rule="nonzero" d="M 204.4375 146.5 L 137.136719 146.5 L 140.164062 157.257812 L 148.699219 157.257812 L 148.699219 224.589844 L 140.164062 224.589844 L 137.136719 235.121094 L 170.460938 235.121094 L 170.460938 224.589844 L 159.402344 224.589844 L 159.402344 190.914062 L 178.507812 190.914062 L 179.941406 198.527344 L 186.246094 198.527344 L 186.246094 181.539062 L 186.09375 181.539062 L 186.246094 181.351562 L 186.246094 175.171875 L 179.941406 175.171875 L 178.507812 181.539062 L 159.402344 181.539062 L 159.402344 157.257812 L 199.339844 157.257812 L 202.207031 166.542969 L 208.515625 166.542969 L 208.515625 146.5 Z M 204.4375 146.5 "/></clipPath><clipPath id="clip-8-sp"><path clip-rule="nonzero" d="M 55 47 L 127 47 L 127 136 L 55 136 Z M 55 47 "/></clipPath><clipPath id="clip-9-sp"><path clip-rule="nonzero" d="M 109.625 47.242188 L 93.214844 47.242188 L 93.214844 57.777344 L 104.273438 57.777344 L 104.273438 91.453125 L 85.167969 91.453125 L 83.734375 83.835938 L 77.421875 83.835938 L 77.421875 100.824219 L 77.582031 100.824219 L 77.421875 101.011719 L 77.421875 107.195312 L 83.734375 107.195312 L 85.167969 100.824219 L 104.273438 100.824219 L 104.273438 125.105469 L 64.332031 125.105469 L 61.46875 115.824219 L 55.15625 115.824219 L 55.15625 135.867188 L 126.539062 135.867188 L 123.511719 125.105469 L 114.976562 125.105469 L 114.976562 57.777344 L 123.511719 57.777344 L 126.539062 47.242188 Z M 109.625 47.242188 "/></clipPath><clipPath id="clip-10-sp"><path clip-rule="nonzero" d="M 55 146 L 127 146 L 127 236 L 55 236 Z M 55 146 "/></clipPath><clipPath id="clip-11-sp"><path clip-rule="nonzero" d="M 109.625 146.5 L 55.15625 146.5 L 55.15625 166.542969 L 61.46875 166.542969 L 64.332031 157.257812 L 104.273438 157.257812 L 104.273438 181.539062 L 85.167969 181.539062 L 83.734375 175.171875 L 77.421875 175.171875 L 77.421875 181.351562 L 77.582031 181.539062 L 77.421875 181.539062 L 77.421875 198.527344 L 83.734375 198.527344 L 85.167969 190.914062 L 104.273438 190.914062 L 104.273438 224.589844 L 93.214844 224.589844 L 93.214844 235.121094 L 126.539062 235.121094 L 123.511719 224.589844 L 114.976562 224.589844 L 114.976562 157.257812 L 123.511719 157.257812 L 126.539062 146.5 Z M 109.625 146.5 "/></clipPath><clipPath id="clip-12-sp"><path clip-rule="nonzero" d="M 137 47 L 209 47 L 209 136 L 137 136 Z M 137 47 "/></clipPath><clipPath id="clip-13-sp"><path clip-rule="nonzero" d="M 154.050781 47.242188 L 137.136719 47.242188 L 140.164062 57.777344 L 148.699219 57.777344 L 148.699219 125.105469 L 140.164062 125.105469 L 137.136719 135.867188 L 208.515625 135.867188 L 208.515625 115.824219 L 202.207031 115.824219 L 199.339844 125.105469 L 159.402344 125.105469 L 159.402344 100.824219 L 178.507812 100.824219 L 179.941406 107.195312 L 186.246094 107.195312 L 186.246094 101.011719 L 186.09375 100.824219 L 186.246094 100.824219 L 186.246094 83.835938 L 179.941406 83.835938 L 178.507812 91.453125 L 159.402344 91.453125 L 159.402344 57.777344 L 170.460938 57.777344 L 170.460938 47.242188 Z M 154.050781 47.242188 "/></clipPath></defs><g clip-path="url(#clip-0-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 8.601562 51.167969 L 59.070312 0.699219 L 109.535156 51.167969 L 59.070312 101.632812 Z M 8.601562 51.167969 "/></g><g clip-path="url(#clip-1-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 154.136719 231.199219 L 204.605469 180.730469 L 255.074219 231.199219 L 204.605469 281.667969 Z M 154.136719 231.199219 "/></g><g clip-path="url(#clip-2-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 154.136719 51.167969 L 204.605469 0.699219 L 255.074219 51.167969 L 204.605469 101.632812 Z M 154.136719 51.167969 "/></g><g clip-path="url(#clip-3-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 8.601562 231.199219 L 59.066406 180.734375 L 109.53125 231.199219 L 59.066406 281.664062 Z M 8.601562 231.199219 "/></g><g clip-path="url(#clip-4-sp)"><g clip-path="url(#clip-5-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 119.285156 141.183594 L 131.835938 128.632812 L 144.386719 141.183594 L 131.835938 153.734375 Z M 119.285156 141.183594 "/></g></g><g clip-path="url(#clip-6-sp)"><g clip-path="url(#clip-7-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 92.824219 190.8125 L 172.824219 110.808594 L 252.828125 190.8125 L 172.824219 270.8125 Z M 92.824219 190.8125 "/></g></g><g clip-path="url(#clip-8-sp)"><g clip-path="url(#clip-9-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 10.84375 91.554688 L 90.847656 11.554688 L 170.851562 91.554688 L 90.847656 171.558594 Z M 10.84375 91.554688 "/></g></g><g clip-path="url(#clip-10-sp)"><g clip-path="url(#clip-11-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 10.84375 190.8125 L 90.847656 110.808594 L 170.851562 190.8125 L 90.847656 270.8125 Z M 10.84375 190.8125 "/></g></g><g clip-path="url(#clip-12-sp)"><g clip-path="url(#clip-13-sp)"><path fill-rule="nonzero" fill="url(#fg-sp)" d="M 92.824219 91.554688 L 172.824219 11.554688 L 252.828125 91.554688 L 172.824219 171.558594 Z M 92.824219 91.554688 "/></g></g></symbol></svg>
@@ -1711,7 +1802,7 @@ html[data-theme="light"] .cb-call{border-color:#8A6E28}
 <div class="xcol"><h5 data-i18n="m.explore">Explore</h5><a href="index.html#gallery" data-i18n="nav.gallery">Gallery</a><a href="index.html#reviews" data-i18n="m.reviews">Reviews</a><a href="index.html#pricing" data-i18n="nav.prices">Prices</a><a href="index.html#vip" data-i18n="nav.vip">VIP</a><a href="visit.html" data-i18n="nav.locations">Locations</a><a href="cart.html" data-i18n="ct.cart">Your cart</a></div>
 <div class="xcol"><h5 data-i18n="f.company">Company</h5><a href="contact.html" data-i18n="nav.contact">Contact</a><a href="careers.html" data-i18n="f.careers">Careers</a><a href="policies.html" data-i18n="f.policies">Policies</a>
 <div class="xctas"><a class="btn btn-gold" href="book.html" data-i18n="nav.book">Book</a><a class="cbtn bronze" href="https://wa.me/971502676751" target="_blank" rel="noopener">WhatsApp · Al Raha</a><a class="cbtn bronze" href="https://wa.me/97125858987" target="_blank" rel="noopener">WhatsApp · Al Bateen, Marasy</a></div></div>
-<a class="xfeat" href="index.html#gallery"><img src="hair-caramel-balayage.jpg" alt="FILTER portfolio"><img src="nails-cateye-french.jpg" alt="FILTER portfolio"><img src="hair-cherry-red.jpg" alt="FILTER portfolio"><img src="lash-ext-volume.jpg" alt="FILTER portfolio"><span data-i18n="gal.c25">Hair · Caramel Balayage</span></a>
+<a class="xfeat" href="index.html#gallery"><img decoding="async" loading="lazy" width="750" height="1000" src="hair-caramel-balayage.webp" alt="FILTER portfolio"><img decoding="async" loading="lazy" width="781" height="900" src="nails-cateye-french.webp" alt="FILTER portfolio"><img decoding="async" loading="lazy" width="750" height="1000" src="hair-cherry-red.webp" alt="FILTER portfolio"><img decoding="async" loading="lazy" width="695" height="900" src="lash-ext-volume.webp" alt="FILTER portfolio"><span data-i18n="gal.c25">Hair · Caramel Balayage</span></a>
 <div class="xmeta">
   <div class="xm-branches">
     <div class="xm-branch"><b data-i18n="f.raha">Al Raha</b><span data-i18n="cm.rahaAdr">Al Faridah Complex</span><a href="tel:+971502676751" dir="ltr">+971 50 267 6751</a></div>
@@ -1767,7 +1858,7 @@ html[data-theme="light"] .cb-call{border-color:#8A6E28}
     </div>
     <a class="btn btn-wa mnav-wa st" data-wa="svc" target="_blank" rel="noopener" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:19px;height:19px;flex:none"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Z"/></svg><span data-i18n="float.wa">WhatsApp</span></a>
   </div></div>
-<main>
+<main id="main">
 <section class="hero" aria-label="Massage"><div class="lsparks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="wrap" style="max-width:900px;text-align:center">
     <nav class="crumb" aria-label="Breadcrumb"><a href="index.html" data-i18n="bc.home">Home</a> <span aria-hidden="true">/</span> <span data-i18n="bc.cat">Massage</span></nav>
@@ -1781,7 +1872,7 @@ html[data-theme="light"] .cb-call{border-color:#8A6E28}
   </div>
 </section>
 <hr class="rule">
-<section class="sec-ivory" aria-label="Highlights"><div class="wrap"><div class="cards reveal"><div class="card"><span class="wm" aria-hidden="true">01</span><span class="badge" data-i18n="c1b">Express</span><h3 data-i18n="c1t">Express Massage</h3><p class="desc" data-i18n="c1d">15 to 40 minutes — targeted tension relief when time is short.</p></div><div class="card"><span class="wm" aria-hidden="true">02</span><span class="badge" data-i18n="c2b">Signature</span><h3 data-i18n="c2t">Signature Massage</h3><p class="desc" data-i18n="c2d">Swedish, lymphatic, madero, pregnancy and reflexology.</p></div><div class="card"><span class="wm" aria-hidden="true">03</span><span class="badge" data-i18n="c3b">Recovery</span><h3 data-i18n="c3t">Sports &amp; Stretching</h3><p class="desc" data-i18n="c3d">Deeper work for athletes and anyone carrying tension.</p></div></div></div><div class="msec-img" aria-hidden="true"><img src="scalp-spa.jpg" alt="FILTER — massage" loading="lazy" decoding="async"></div></section>
+<section class="sec-ivory" aria-label="Highlights"><div class="wrap"><div class="cards reveal"><div class="card"><span class="wm" aria-hidden="true">01</span><span class="badge" data-i18n="c1b">Express</span><h3 data-i18n="c1t">Express Massage</h3><p class="desc" data-i18n="c1d">15 to 40 minutes — targeted tension relief when time is short.</p></div><div class="card"><span class="wm" aria-hidden="true">02</span><span class="badge" data-i18n="c2b">Signature</span><h3 data-i18n="c2t">Signature Massage</h3><p class="desc" data-i18n="c2d">Swedish, lymphatic, madero, pregnancy and reflexology.</p></div><div class="card"><span class="wm" aria-hidden="true">03</span><span class="badge" data-i18n="c3b">Recovery</span><h3 data-i18n="c3t">Sports &amp; Stretching</h3><p class="desc" data-i18n="c3d">Deeper work for athletes and anyone carrying tension.</p></div></div></div><div class="msec-img" aria-hidden="true"><img width="675" height="900" src="scalp-spa.webp" alt="FILTER — massage" loading="lazy" decoding="async"></div></section>
 <hr class="rule">
 <section class="sec-marble" aria-labelledby="ap-h"><div class="wrap" style="max-width:780px;text-align:center"><h2 class="h-sec" id="ap-h" data-i18n="ap.t">The FILTER approach to massage</h2><p class="lede reveal" data-i18n="ap.d">Tell us how you feel, not just what to book — tension, tiredness, training recovery or a moment of calm. Your therapist adjusts pressure and focus throughout, and every session ends the way it should: unhurried.</p></div></section>
 <hr class="rule">
@@ -1792,7 +1883,8 @@ html[data-theme="light"] .cb-call{border-color:#8A6E28}
       <h2 class="h-sec" id="p-h" data-i18n="p.title">Price list</h2>
       <p class="lede" data-i18n="p.sub">Every service, every price. All prices in AED.</p>
     </div>
-    <p class="cart-hint" data-i18n-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 7h12l1 13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-i18n="ct.hint">Tap any treatment to add it to your cart.</span></p><div class="price-groups" style="margin-top:30px"><div class="price-group"><h3 class="pg-title">Massage</h3><div class="price-row"><span class="pr-name">15 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 90</span></div><div class="price-row"><span class="pr-name">30 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 180</span></div><div class="price-row"><span class="pr-name">60 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 320</span></div><div class="price-row"><span class="pr-name">90 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 420</span></div></div></div><div class="mc-note"><p data-i18n="mx.note">Relaxation, Swedish, deep tissue and pregnancy massage available. Home service available.</p></div>
+    <p class="cart-hint" data-i18n-wrap><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 7h12l1 13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span data-i18n="ct.hint">Tap any treatment to add it to your cart.</span></p>
+  <div class="price-groups" style="margin-top:30px"><div class="price-group"><h3 class="pg-title">Massage</h3><div class="price-row"><span class="pr-name">15 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 90</span></div><div class="price-row"><span class="pr-name">30 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 180</span></div><div class="price-row"><span class="pr-name">60 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 320</span></div><div class="price-row"><span class="pr-name">90 Minute Massage</span><span class="pr-lead"></span><span class="pr-price">AED 420</span></div></div></div><div class="mc-note"><p data-i18n="mx.note">Relaxation, Swedish, deep tissue and pregnancy massage available. Home service available.</p></div>
     <div style="text-align:center"><span class="call-cta-wrap"><button class="btn btn-gold call-cta" type="button" data-i18n="call.cta">Need help? Call today</button></span></div>
   </div>
 </section>
@@ -1800,7 +1892,7 @@ html[data-theme="light"] .cb-call{border-color:#8A6E28}
 <hr class="rule">
 <section class="sec-ivory" aria-labelledby="f-h"><div class="wrap" style="max-width:760px">
   <h2 class="h-sec" id="f-h" style="text-align:center" data-i18n="faq.title">Questions, answered</h2>
-  <div class="faq reveal" style="margin-top:24px"><details><summary><span data-i18n="faq.q1">Which massage should I choose?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a1">Swedish for relaxation, lymphatic for detox and puffiness, sports for deep tension. Ask us and we'll advise.</div></details><details><summary><span data-i18n="faq.q2">Do you offer pregnancy massage?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a2">Yes — a dedicated 60-minute pregnancy massage, performed safely and gently.</div></details><details><summary><span data-i18n="faq.q3">What is madero massage?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a3">A wooden-tool body massage that sculpts, drains and stimulates circulation.</div></details><details><summary><span data-i18n="faq.q4">Can I add massage to another service?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a4">Absolutely — many guests pair a massage with hair or nails. Just mention it when booking.</div></details></div>
+  <div class="faq reveal cascade" style="margin-top:24px"><details><summary><span data-i18n="faq.q1">Which massage should I choose?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a1">Swedish for relaxation, lymphatic for detox and puffiness, sports for deep tension. Ask us and we'll advise.</div></details><details><summary><span data-i18n="faq.q2">Do you offer pregnancy massage?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a2">Yes — a dedicated 60-minute pregnancy massage, performed safely and gently.</div></details><details><summary><span data-i18n="faq.q3">What is madero massage?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a3">A wooden-tool body massage that sculpts, drains and stimulates circulation.</div></details><details><summary><span data-i18n="faq.q4">Can I add massage to another service?</span><span class="fx" aria-hidden="true"></span></summary><div class="fa" data-i18n="faq.a4">Absolutely — many guests pair a massage with hair or nails. Just mention it when booking.</div></details></div>
 </div></section>
 <hr class="rule">
 <section class="sec-marble" aria-labelledby="l-h"><div class="wrap">
@@ -2010,12 +2102,16 @@ var SIDX=[{"t":"s","n":"Cut & Finish","p":"385","c":"Hair","u":"/hair.html","k":
     if(!arr.length)return"";
     var out='<p class="sg">'+label+'</p>';
     for(var i=0;i<arr.length;i++){var it=arr[i].it;
-      out+='<a class="sr" role="option" data-i" href="'+it.u+'">'
-        .replace(' data-i"',' data-si="'+arr[i].gi+'"')
-        +'<span class="sr-n">'+hi(it.n,q)+'</span>'
-        +(it.t==="s"?'<span class="sr-c">'+it.c+'</span>':'')
-        +(it.p?'<span class="sr-p">'+(/^\d/.test(it.p)?"AED "+it.p:it.p.replace("from","from AED"))+'</span>':'')
-        +'</a>';}
+      var isSvc=(it.t==="s"&&it.p&&/\d/.test(it.p));
+   var pnum=isSvc?parseInt((it.p.match(/\d+/)||["0"])[0],10):0;
+   var pfrom=isSvc?/from/i.test(it.p):false;
+   out+='<a class="sr'+(isSvc?' sr-svc':'')+'" role="option" data-i" href="'+it.u+'">'
+    .replace(' data-i"',' data-si="'+arr[i].gi+'"')
+    +'<span class="sr-n">'+hi(it.n,q)+'</span>'
+    +(it.t==="s"?'<span class="sr-c">'+it.c+'</span>':'')
+    +(it.p?'<span class="sr-p">'+(/^\d/.test(it.p)?"AED "+it.p:it.p.replace("from","from AED"))+'</span>':'')
+    +(isSvc?'<button type="button" class="sr-add" aria-label="Add to cart" data-add-n="'+it.n.replace(/"/g,"&quot;")+'" data-add-p="'+pnum+'" data-add-f="'+(pfrom?1:0)+'" data-add-u="'+it.u+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 7h12l1 13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></button>':'')
+    +'</a>';}
     return out;
   }
   function popular(){
@@ -2067,6 +2163,13 @@ var SIDX=[{"t":"s","n":"Cut & Finish","p":"385","c":"Hair","u":"/hair.html","k":
     inp.value="";if(lastFocus&&lastFocus.focus)lastFocus.focus();}
   function init(){
     ov=document.getElementById("sov");inp=document.getElementById("sInput");res=document.getElementById("sRes");
+  if(res)res.addEventListener("click",function(e){
+    var ab=e.target.closest(".sr-add");
+    if(ab){ e.preventDefault(); e.stopPropagation();
+      var nm=ab.getAttribute("data-add-n"), p=parseInt(ab.getAttribute("data-add-p"),10), f=ab.getAttribute("data-add-f")==="1", u=ab.getAttribute("data-add-u");
+      if(window.filterOpenService) window.filterOpenService(nm,p,f,u);
+    }
+  });
     if(!ov)return;
     var trigs=document.querySelectorAll("[data-sopen]");
     for(var i=0;i<trigs.length;i++)trigs[i].addEventListener("click",open);
@@ -2430,5 +2533,23 @@ function h(e){if(e.matches!==m)location.reload();}}catch(_e){}})();</script>
 
 
 <script>(function(){try{document.addEventListener("click",function(e){var c=e.target.closest(".call-cta");if(c){e.preventDefault();var m=document.getElementById("contactM");if(m){m.classList.add("open");document.body.style.overflow="hidden";}}});}catch(_e){}})();</script>
+<script>(function(){try{
+  function killToast(e){var x=e.target&&e.target.closest?e.target.closest("#cartToast .ct-x"):null;if(!x)return;
+    e.preventDefault();e.stopPropagation();
+    var el=document.getElementById("cartToast");if(!el)return;
+    el.style.transition="";el.style.transform="";el.style.opacity="";
+    el.classList.remove("on");document.body.classList.remove("toast-up");}
+  document.addEventListener("click",killToast,true);
+  document.addEventListener("pointerup",killToast,true);
+  document.addEventListener("touchend",killToast,true);
+}catch(_e){}})();</script>
+<script>(function(){try{
+  function accent(){document.querySelectorAll("h2.h-sec").forEach(function(h){
+    if(h.querySelector(".acc")||/[\u0600-\u06FF]/.test(h.textContent))return;
+    var t=h.textContent.trim(); var parts=t.split(/\s+/); if(parts.length<2)return;
+    var last=parts.pop(); h.textContent=parts.join(" ")+" "; var em=document.createElement("em"); em.className="acc"; em.textContent=last; h.appendChild(em);});}
+  accent(); var mo=new MutationObserver(function(){clearTimeout(mo._t);mo._t=setTimeout(accent,60);});
+  document.querySelectorAll("h2.h-sec").forEach(function(h){mo.observe(h,{childList:true,characterData:true,subtree:true});});
+}catch(_e){}})();</script>
 </body>
 </html>

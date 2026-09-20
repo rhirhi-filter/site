@@ -1,0 +1,44 @@
+{
+ "name": "FILTER Ladies Salon",
+ "short_name": "FILTER",
+ "description": "Luxury ladies salon in Abu Dhabi \u2014 Al Raha & Al Bateen, Marasy. Hair, nails, lashes, facials, semi-permanent makeup, massage.",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#0A0F18",
+ "theme_color": "#0A0F18",
+ "lang": "en",
+ "dir": "ltr",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  },
+  {
+   "src": "apple-touch-icon.png",
+   "sizes": "180x180",
+   "type": "image/png"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Book on WhatsApp",
+   "url": "./book.html"
+  },
+  {
+   "name": "Prices",
+   "url": "./services.html"
+  },
+  {
+   "name": "Find us",
+   "url": "./visit.html"
+  }
+ ]
+}
